@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Keypad Design</title>
+  <style>
+    /* Basic styling for the mobile keypad */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .num {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 230px;
+      height: 40px;
+      font-size: 30px;
+      text-align: center;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .keypad {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .key {
+      padding: 10px;
+      font-size: 24px;
+      text-align: center;
+      background-color: #333;
+      border-radius: 30%;
+      width: 50px;
+      height: 50px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .key:hover {
+      background-color: #555;
+    }
+    
+
+
+  </style>
+</head>
+<body>
+  <h1>Mobile Keypad Design</h1>
+  <div class="num">
+    <input type="tel" id="phone" name="phone" readonly>
+  </div>
+
+
+  <div class="keypad">
+    <button class="key" onclick="appendNumber(1)">1</button>
+    <button class="key" onclick="appendNumber(2)">2</button>
+    <button class="key" onclick="appendNumber(3)">3</button>
+    <button class="key" onclick="appendNumber(4)">4</button>
+    <button class="key" onclick="appendNumber(5)">5</button>
+    <button class="key" onclick="appendNumber(6)">6</button>
+    <button class="key" onclick="appendNumber(7)">7</button>
+    <button class="key" onclick="appendNumber(8)">8</button>
+    <button class="key" onclick="appendNumber(9)">9</button>
+    <button class="key" onclick="appendNumber('*')" id="star">*</button>
+    <button class="key" onclick="appendNumber(0)">0</button>
+    <button class="key" onclick="appendNumber('#')">#</button>
+
+  </div><br>
+  <button class='key' onclick="clearInput()">clear</button>
+</body>
+</html>
+
+
+  <script>
+    function appendNumber(number) {
+      var input = document.getElementById("phone");
+      input.value += number;
+    }
+    function clearInput(){
+      var input=document.getElementById('phone');
+      input.value="";
+    }
+  </script>
+</body>
+</html>
